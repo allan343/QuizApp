@@ -19,6 +19,7 @@ background-color: white;
   float: right;
   margin-right: 20px;
 }
+
 .quiz{
  /* display:inline-block;*/
  margin-top:20px;
@@ -39,7 +40,7 @@ background-color: white;
   margin-top: 50px;
   float:left;
  /*display:inline-block;*/
-  width: 50%;
+  width: 40%;
   height: 100%;
 }
 
@@ -53,9 +54,6 @@ margin-left: auto;
 margin-right: auto;
 margin-top: 20px;
 margin-bottom: 20px;
- 
-
-
 }
 
 fieldset{
@@ -73,9 +71,9 @@ border: 1px solid black;
 margin-bottom: 20px;
 }
 .display{
-  display:inline-block;
- /* float: right;*/
-  width: 50%;
+  /*display:inline-block;*/
+  float: right;
+  width: 60%;
   height: 100%;  
 }
 
