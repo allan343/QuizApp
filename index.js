@@ -80,8 +80,8 @@ function startQuiz()
 }
 
 function renderQuestion(){
-    setQuestionNumber();
-    
+  //  setQuestionNumber();
+  
     console.log("render is "+questionNumber);
     $('.questionAnswerForm').html(createQuestion());
 
