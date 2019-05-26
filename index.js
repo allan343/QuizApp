@@ -1,4 +1,4 @@
-let questionNumber = 0;
+let questionNumber = 1;
 let score = 0;
 
 function incrementScore () {
@@ -6,40 +6,51 @@ function incrementScore () {
     $('.scoreCount').text(score);
   }
 
+  function setQuestionNumber(){
+    $('.questionNumber').text(questionNumber);
+  }
   function incrementQuestionNumber () {
     questionNumber++;
-    $('.questionNumber').text(questionNumber);
+   setQuestionNumber();
+    console.log("increment is " + questionNumber);
+  }
+
+  function createQuestionImage() {
+  
+    $(".questionImage").attr("src", STORE[questionNumber].icon);
   }
 
   function createQuestion(){
+    
+      console.log("create questino is " + questionNumber);
     return `
     <hr>
     <form class="questionForm" action="/some-server-endpoint" method ="post">
                     
                             <fieldset>
-                                    <legend class="question">${STORE[0].question} </legend>
+                                    <legend class="question">${STORE[questionNumber].question} </legend>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-1" value="0" checked>
-                                    <label for="ans-great-1">${STORE[0].answers[0]}</label>
+                                    <label for="ans-great-1">${STORE[questionNumber].answers[0]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-2" value="1">
-                                    <label for="ans-great-2">${STORE[0].answers[1]}</label>
+                                    <label for="ans-great-2">${STORE[questionNumber].answers[1]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-3" value="2">
-                                    <label for="ans-great-3">${STORE[0].answers[2]}</label>
+                                    <label for="ans-great-3">${STORE[questionNumber].answers[2]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-4" value="3">
-                                    <label for="ans-great-3">${STORE[0].answers[3]}</label>
+                                    <label for="ans-great-3">${STORE[questionNumber].answers[3]}</label>
                                     </div>
                                   </fieldset>
                                     <div class="trivia">
-                                    ${STORE[0].trivia}
+                                    ${STORE[questionNumber].trivia}
                                     </div>
                                    
                                   <button class = "nextQuestion" type="submit">Next Question</button>
@@ -49,19 +60,35 @@ function incrementScore () {
   }
 function startQuiz()
 {
-  
+
     $('.quizStart').on('click', '.startButton',function(event)
     {
         $('.questionAnswerForm').css('display', 'block');
         $('.quizStart').remove();
-        incrementQuestionNumber();
-
+       createQuestionImage();
+        
+        
     });
 
 }
 
 function renderQuestion(){
+    setQuestionNumber();
+    //createQuestionImage();
+    console.log("render is "+questionNumber);
     $('.questionAnswerForm').html(createQuestion());
+
+}
+
+function renderNextQuestion(){
+    console.log("next render is "+questionNumber);
+    $('.questionForm').on('click', '.nextQuestion',function(event)
+    {
+    incrementQuestionNumber();
+    createQuestionImage();
+    console.log("next render is "+questionNumber);
+    $('.questionAnswerForm').html(createQuestion());
+    });
 
 }
 
@@ -69,7 +96,7 @@ function createQuiz () {
     startQuiz();
     renderQuestion();
   //  userSelectAnswer();
-  //  renderNextQuestion();
+   renderNextQuestion();
   }
   
   $(createQuiz);
