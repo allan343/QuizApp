@@ -24,6 +24,13 @@ function incrementScore () {
     
       console.log("create questino is " + questionNumber);
     return `
+    <section class = 'info'>
+                             <ul>
+                                     <li class= "count">Question<span class="questionNumber"> &nbsp;${questionNumber}&nbsp; </span>out of 10</li>
+                                     <li class= "score">Score  <span class= "scoreCount"> &nbsp;0&nbsp;</span> : 10 </li>
+                            </ul>
+                        </section>
+                        
     <hr>
     <form class="questionForm" action="/some-server-endpoint" method ="post">
                     
@@ -74,7 +81,7 @@ function startQuiz()
 
 function renderQuestion(){
     setQuestionNumber();
-    //createQuestionImage();
+    
     console.log("render is "+questionNumber);
     $('.questionAnswerForm').html(createQuestion());
 
