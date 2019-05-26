@@ -52,30 +52,30 @@ const STORE = [
         alt: 'Longclaw'
       },
     {
-        question: 'Who plays Tyrion Lanister?',
+        question: 'Daenerys is commonly referred to as?',
         answers: [
-          'Kit Harington',
-          'Nikolaj Coster-Waldau',
-          'Peter Dinklage',
-          'Iain Glen'
+          'Khal',
+          'Khalessi',
+          'Cupbearer',
+          'Maid of the Seas'
           ],
-          trivia:'Peter Dinklage plays Tyrion Lanister.  He was not only the first person cast for the "Game of Thrones" series, but also the only person author George R.R. Martin wanted to play Tyrion.',
-        correctAnswer: 'Peter Dinklage',
-        icon: 'Tyrion.jpg',
-        alt: 'Tyrion'
+          trivia:'Khaleesi is a Dothraki title referring to the wife of the khal.  As she continued on her journey, Daenerys more formally pressed her claim to the Iron Throne and thus emphasized the title she felt she had a birthright to, Queen of the Andals and the First Men. She nonetheless continued to claim her Dothraki title, and made sure that "Khaleesi of the Great Grass Sea" ',
+        correctAnswer: 'Khalessi',
+        icon: 'Daenerys.jpg',
+        alt: 'Daenerys'
       },
     {
-        question: 'Who plays Tyrion Lanister?',
+        question: 'Aside from dragonglass, a white walker can be killed by a weapon made of what material?',
         answers: [
-          'Kit Harington',
-          'Nikolaj Coster-Waldau',
-          'Peter Dinklage',
-          'Iain Glen'
+          'Adamantium',
+          'Vibranium',
+          'Valyrian steel',
+          'Stainless Steel'
           ],
-          trivia:'Peter Dinklage plays Tyrion Lanister.  He was not only the first person cast for the "Game of Thrones" series, but also the only person author George R.R. Martin wanted to play Tyrion.',
-        correctAnswer: 'Peter Dinklage',
-        icon: 'Tyrion.jpg',
-        alt: 'Tyrion'
+          trivia:'The White Walkers were an ancient race of formerly-human ice creatures who came from the Far North of Westeros. After remaining hidden for thousands of years, they returned and were sighted by several sworn brothers of the Night\'s Watch and countless wildlings.',
+        correctAnswer: 'Valyrian steel',
+        icon: 'WhiteWalker.jpg',
+        alt: 'White Walker'
       },
 
       {
