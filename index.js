@@ -1,8 +1,14 @@
 let questionNumber = 0;
 let score = 0;
 
-function changeScore () {
-    score ++;
+function incrementScore () {
+    score++;
+    $('.scoreCount').text(score);
+  }
+
+  function incrementQuestionNumber () {
+    questionNumber++;
+    $('.questionNumber').text(questionNumber);
   }
 
   function createQuestion(){
@@ -11,29 +17,29 @@ function changeScore () {
     <form class="questionForm" action="/some-server-endpoint" method ="post">
                     
                             <fieldset>
-                                    <legend class="question">How did Daenerys Targaryen eventually hatch her dragon eggs? </legend>
+                                    <legend class="question">${STORE[0].question} </legend>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-1" value="0" checked>
-                                    <label for="ans-great-1">In a lightning storm</label>
+                                    <label for="ans-great-1">${STORE[0].answers[0]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-2" value="1">
-                                    <label for="ans-great-2">In a funeral pyre.</label>
+                                    <label for="ans-great-2">${STORE[0].answers[1]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-3" value="2">
-                                    <label for="ans-great-3">In a fireplace.</label>
+                                    <label for="ans-great-3">${STORE[0].answers[2]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
                                     <input type="radio" name="feelings-2" id="ans-great-4" value="3">
-                                    <label for="ans-great-3">In a frozen cave.</label>
+                                    <label for="ans-great-3">${STORE[0].answers[3]}</label>
                                     </div>
                                   </fieldset>
                                     <div class="trivia">
-                                            At the end of Season 1, Daenerys Targaryen placed her three dragon eggs on the funeral pyre of her late husband. She then walked into the flames and emerged from the ashes the next morning holding three newly hatched dragons. 
+                                    ${STORE[0].trivia}
                                     </div>
                                    
                                   <button class = "nextQuestion" type="submit">Next Question</button>
@@ -48,8 +54,7 @@ function startQuiz()
     {
         $('.questionAnswerForm').css('display', 'block');
         $('.quizStart').remove();
-        changeScore();
-
+        incrementQuestionNumber();
 
     });
 
