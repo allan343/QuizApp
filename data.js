@@ -39,7 +39,7 @@ const STORE = [
         alt: 'Tyrion'
       },
     {
-        question: 'What is the name of Jon Snow\'s sword',
+        question: 'What is the name of Jon Snows sword',
         answers: [
           'Longclaw',
           'Narsil',

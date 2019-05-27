@@ -32,7 +32,7 @@ function incrementScore () {
                         </section>
                         
     <hr>
-    <form class="questionForm" action="/some-server-endpoint" method ="post">
+    <form class="questionForm"  method ="post">
                     
                             <fieldset>
                                     <legend class="question">${STORE[questionNumber].question} </legend>
@@ -67,7 +67,7 @@ function incrementScore () {
   }
 function startQuiz()
 {
-
+  console.log("lenght is "+STORE.length);
     $('.quizStart').on('click', '.startButton',function(event)
     {
         $('.questionAnswerForm').css('display', 'block');
@@ -89,8 +89,10 @@ function renderQuestion(){
 
 function renderNextQuestion(){
     console.log("next render is "+questionNumber);
+    
     $('.questionForm').on('click', '.nextQuestion',function(event)
     {
+      event.preventDefault();
     incrementQuestionNumber();
     createQuestionImage();
     console.log("next render is "+questionNumber);
