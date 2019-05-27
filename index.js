@@ -89,14 +89,15 @@ function renderQuestion(){
 
 function renderNextQuestion(){
     console.log("next render is "+questionNumber);
-    
-    $('.questionForm').on('click', '.nextQuestion',function(event)
+    $('.questionAnswerForm').on('click', '.nextQuestion',function(event)
     {
       event.preventDefault();
     incrementQuestionNumber();
     createQuestionImage();
-    console.log("next render is "+questionNumber);
+    
+    console.log("inside render is "+questionNumber);
     $('.questionAnswerForm').html(createQuestion());
+    
     });
 
 }

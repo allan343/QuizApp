@@ -59,7 +59,7 @@ const STORE = [
           'Cupbearer',
           'Maid of the Seas'
           ],
-          trivia:'Khaleesi is a Dothraki title referring to the wife of the khal.  As she continued on her journey, Daenerys more formally pressed her claim to the Iron Throne and thus emphasized the title she felt she had a birthright to, Queen of the Andals and the First Men. She nonetheless continued to claim her Dothraki title, and made sure that "Khaleesi of the Great Grass Sea" ',
+          trivia:'Khaleesi is a Dothraki title referring to the wife of the khal.  As she continued on her journey, Daenerys more formally pressed her claim to the Iron Throne and thus emphasized the title she felt she had a birthright to, Queen of the Andals and the First Men. ',
         correctAnswer: 'Khalessi',
         icon: 'Daenerys.jpg',
         alt: 'Daenerys'
