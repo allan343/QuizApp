@@ -104,6 +104,7 @@ function userSelectAnswer(){
     event.preventDefault();
     var radioValue = $("input[name='feelings-2']:checked").val();
     console.log("show? " + radioValue);
+    $('.userSubmit').remove();
     showTrivia();
   });
 }
