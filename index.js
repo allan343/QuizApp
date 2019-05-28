@@ -47,22 +47,22 @@ function incrementScore () {
                             <fieldset>
                                     <legend class="question">${STORE[questionNumber].question} </legend>
                                     <div class =inputBorder>
-                                    <input type="radio" name="feelings-2" id="ans-great-1" value="0" checked>
+                                    <input type="radio" name="feelings-2" id="ans-great-1" value="${STORE[questionNumber].answers[0]}" checked>
                                     <label for="ans-great-1">${STORE[questionNumber].answers[0]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
-                                    <input type="radio" name="feelings-2" id="ans-great-2" value="1">
+                                    <input type="radio" name="feelings-2" id="ans-great-2" value="${STORE[questionNumber].answers[1]}">
                                     <label for="ans-great-2">${STORE[questionNumber].answers[1]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
-                                    <input type="radio" name="feelings-2" id="ans-great-3" value="2">
+                                    <input type="radio" name="feelings-2" id="ans-great-3" value="${STORE[questionNumber].answers[2]}">
                                     <label for="ans-great-3">${STORE[questionNumber].answers[2]}</label>
                                     </div>
                                     <br>
                                     <div class =inputBorder>
-                                    <input type="radio" name="feelings-2" id="ans-great-4" value="3">
+                                    <input type="radio" name="feelings-2" id="ans-great-4" value="${STORE[questionNumber].answers[3]}">
                                     <label for="ans-great-3">${STORE[questionNumber].answers[3]}</label>
                                     </div>
                                   </fieldset>
@@ -99,10 +99,11 @@ function renderQuestion(){
 }
 
 function userSelectAnswer(){
-  $('.questionAnswerForm').on('click', '.userSubmit',function(event)
+  $('.questionAnswerForm').on('submit',function(event)
   {
     event.preventDefault();
-    console.log("show?")
+    var radioValue = $("input[name='feelings-2']:checked").val();
+    console.log("show? " + radioValue);
     showTrivia();
   });
 }
@@ -131,4 +132,3 @@ function createQuiz () {
   }
   
   $(createQuiz);
-  
