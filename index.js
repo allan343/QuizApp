@@ -6,6 +6,16 @@ function incrementScore () {
     $('.scoreCount').text(score);
   }
 
+  function hideTrivia(){
+    $( ".trivia" ).hide();
+    $( ".nextQuestion" ).hide();
+  }
+
+  function showTrivia(){
+    $( ".trivia" ).show();
+    $( ".nextQuestion" ).show();
+  }
+
   function setQuestionNumber(){
     $('.questionNumber').text(questionNumber);
   }
@@ -60,7 +70,6 @@ function incrementScore () {
                                     <div class="trivia">
                                     ${STORE[questionNumber].trivia}
                                     </div>
-                                   
                                   <button class = "nextQuestion" type="submit">Next Question</button>
                                 </form>
                         </section>
@@ -74,6 +83,7 @@ function startQuiz()
         $('.questionAnswerForm').css('display', 'block');
         $('.quizStart').remove();
        createQuestionImage();
+       hideTrivia();
         
         
     });
@@ -82,10 +92,19 @@ function startQuiz()
 
 function renderQuestion(){
   //  setQuestionNumber();
-  
+    
     console.log("render is "+questionNumber);
     $('.questionAnswerForm').html(createQuestion());
 
+}
+
+function userSelectAnswer(){
+  $('.questionAnswerForm').on('click', '.userSubmit',function(event)
+  {
+    event.preventDefault();
+    console.log("show?")
+    showTrivia();
+  });
 }
 
 function renderNextQuestion(){
@@ -97,8 +116,9 @@ function renderNextQuestion(){
     createQuestionImage();
     
     console.log("inside render is "+questionNumber);
-    $('.questionAnswerForm').html(createQuestion());
     
+    $('.questionAnswerForm').html(createQuestion());
+    hideTrivia();
     });
 
 }
@@ -106,7 +126,7 @@ function renderNextQuestion(){
 function createQuiz () {
     startQuiz();
     renderQuestion();
-  //  userSelectAnswer();
+    userSelectAnswer();
    renderNextQuestion();
   }
   
