@@ -38,16 +38,16 @@ const STORE = [
         icon: 'Tyrion.jpg',
         alt: 'Tyrion'
       },
-    {
-        question: 'What is the name of Jon Snows sword',
+      {
+        question: 'What is the name of Jon Snow\'s sword?',
         answers: [
           'Longclaw',
           'Narsil',
           'Master Sword',
           'Glamdring'
           ],
-          trivia:'Peter Dinklage plays Tyrion Lanister.  He was not only the first person cast for the "Game of Thrones" series, but also the only person author George R.R. Martin wanted to play Tyrion.',
-        correctAnswer: 'Peter Dinklage',
+          trivia:'In saving Lord Commander Jeor Mormont\'s life from a wight attack at Castle Black, Jon Snow sets a fire that damages Longclaw\'s hilt.  Jeor has a stonecarving builder of the Night\'s Watch replace the hilt with one capped by a snarling wolf\'s head of pale stone with chips of garnet for the eyes to reflect Jon\'s Stark heritage',
+        correctAnswer: 'Longclaw',
         icon: 'LongClaw.jpg',
         alt: 'Longclaw'
       },
@@ -78,17 +78,4 @@ const STORE = [
         alt: 'White Walker'
       },
 
-      {
-        question: 'What is the name of Jon Snow\'s sword',
-        answers: [
-          'Longclaw',
-          'Narsil',
-          'Master Sword',
-          'Glamdring'
-          ],
-          trivia:'Peter Dinklage plays Tyrion Lanister.  He was not only the first person cast for the "Game of Thrones" series, but also the only person author George R.R. Martin wanted to play Tyrion.',
-        correctAnswer: 'Peter Dinklage',
-        icon: 'LongClaw.jpg',
-        alt: 'Longclaw'
-      }
 ];
