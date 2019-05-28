@@ -7,7 +7,7 @@ background-size: cover;
 .window{
 display:block;
 width: 1000px;
-height: 500px;
+height: 550px;
 margin-left:auto;
 margin-right:auto;
 background-color: white;
@@ -20,6 +20,16 @@ background-color: white;
   width: 100%;
 }
 
+.userSubmit{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+.question{
+  display:block;
+  margin-bottom: 10px;
+}
 .quizStart{
   
 }
@@ -71,7 +81,7 @@ button{
 display: block;
 margin-left: auto;
 margin-right: auto;
-margin-top: 20px;
+margin-top: -10px;
 margin-bottom: 20px;
 }
 

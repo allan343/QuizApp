@@ -56,6 +56,7 @@ function incrementScore () {
                                     <label for="ans-great-3">${STORE[questionNumber].answers[3]}</label>
                                     </div>
                                   </fieldset>
+                                  <button class = "userSubmit" type="submit">Submit</button>
                                     <div class="trivia">
                                     ${STORE[questionNumber].trivia}
                                     </div>
