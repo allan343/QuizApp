@@ -37,7 +37,7 @@ function incrementScore () {
     <section class = 'info'>
                              <ul>
                                      <li class= "count">Question<span class="questionNumber"> &nbsp;${questionNumber}&nbsp; </span>out of 10</li>
-                                     <li class= "score">Score  <span class= "scoreCount"> &nbsp;0&nbsp;</span> : 10 </li>
+                                     <li class= "score">Score  <span class= "scoreCount"> &nbsp;${score}&nbsp;</span> : 10 </li>
                             </ul>
                         </section>
                         
@@ -103,7 +103,11 @@ function userSelectAnswer(){
   {
     event.preventDefault();
     var radioValue = $("input[name='feelings-2']:checked").val();
-    console.log("show? " + radioValue);
+    console.log("correct answer is " + STORE[questionNumber].correctAnswer);
+    if(radioValue === STORE[questionNumber].correctAnswer)
+    {
+      incrementScore();
+    }
     $('.userSubmit').remove();
     showTrivia();
   });
@@ -129,7 +133,7 @@ function createQuiz () {
     startQuiz();
     renderQuestion();
     userSelectAnswer();
-   renderNextQuestion();
+    renderNextQuestion();
   }
   
   $(createQuiz);
