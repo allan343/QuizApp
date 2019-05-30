@@ -1,6 +1,14 @@
 let questionNumber = 1;
 let score = 0;
 
+function hideSubmitButton(){
+  $(".userSubmit").hide();
+}
+
+function showSubmitButton(){
+  $(".userSubmit").show();
+}
+
 function incrementScore () {
     score++;
     $('.scoreCount').text(score);
@@ -131,37 +139,23 @@ function startQuiz()
 }
 
 function renderQuestion(){
-  //  setQuestionNumber();
-    
+
     console.log("render is "+questionNumber);
     $('.questionAnswerForm').html(createQuestion());
+    hideSubmitButton();
 
 }
 
 function userSelectAnswer(){
-  //changing background color
-  // set click handler on the div
-  // change child radio button to be checked
-  // just set background to be red
-  // set the correct id to be green
+
   let selection = " ";
   $('.questionAnswerForm').on('click', '.inputBorder',function(event)
   {
     $(this).find('input').prop('checked',true);
-
-    //console.log("this is " +this);
-    //  console.log("this is " + $(this).attr('class'));
       selection= `.${$(this).attr('class').split(" ")[1]}`;
-      //selection = $(this).attr('class');
-    //  console.log("class is " + selection);
-      var radioValue = $(selection).find('input').val();
-      console.log("this value is " + radioValue);
-     // $(this).css("background-color", "green");
-     // $(this).css("color", "white");
-    //console.log("current target is " + event.currentTarget);
-    //this
-    //this event.currentTarget=
-    //background color
+     // console.log("this value is " + radioValue);
+      showSubmitButton();
+   
   });
 
   $('.questionAnswerForm').on('submit',function(event)
@@ -169,10 +163,6 @@ function userSelectAnswer(){
     event.preventDefault();
     var radioValue = $("input[name='feelings-2']:checked").val();
     console.log("correct answer is " + STORE[questionNumber].correctAnswer);
-   /* if(radioValue === STORE[questionNumber].correctAnswer)
-    {
-      incrementScore();
-    }*/
     isAnswerCorrect(selection);
     $('.userSubmit').remove();
     showTrivia();
@@ -190,6 +180,7 @@ function renderNextQuestion(){
     console.log("inside render is "+questionNumber);
     
     $('.questionAnswerForm').html(createQuestion());
+    hideSubmitButton();
     hideTrivia();
     });
 
