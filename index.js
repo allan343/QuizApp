@@ -196,6 +196,8 @@ function showResults(){
   </div>`
   );
 
+  $(".questionImage").attr("src", "gameEnd.jpg");
+
 }
 
 function restartQuiz(){

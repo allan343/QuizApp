@@ -116,3 +116,28 @@ margin-bottom: 20px;
 .trivia{
   padding: 5px;
 }
+
+@media screen and (max-width: 320px) {
+
+  .quiz{  
+  display: flex;
+  flex-direction: column;
+  border: none;
+  flex-shrink: 1;
+  }
+  
+
+}
+
+@media screen and (max-width: 520px) {
+
+  .quiz{  
+  display: flex;
+  flex-direction: column;
+  border: none;
+  flex-shrink: 1;
+  }
+  
+
+
+}
