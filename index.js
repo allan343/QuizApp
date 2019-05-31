@@ -40,12 +40,12 @@ function incrementScore () {
 
   function createQuestion(){
     
-      console.log("create questino is " + questionNumber);
+    if (questionNumber < STORE.length) {
     return `
     <section class = 'info'>
                              <ul>
-                                     <li class= "count">Question<span class="questionNumber"> &nbsp;${questionNumber}&nbsp; </span>out of 10</li>
-                                     <li class= "score">Score  <span class= "scoreCount"> &nbsp;${score}&nbsp;</span> : 10 </li>
+                                     <li class= "count">Question<span class="questionNumber"> &nbsp;${questionNumber}&nbsp; </span>out of 5</li>
+                                     <li class= "score">Score  <span class= "scoreCount"> &nbsp;${score}&nbsp;</span> : 5 </li>
                             </ul>
                         </section>
                         
@@ -82,6 +82,12 @@ function incrementScore () {
                                 </form>
                         </section>
     `;
+    }
+    else{
+     showResults();
+      restartQuiz();
+     // $('.questionNumber').text(10)
+    }
   }
 
 function isAnswerCorrect(selection)
@@ -115,11 +121,7 @@ function isAnswerCorrect(selection)
       $(".answer4").css("background-color", "green");
       $(".answer4").css("color", "white");
     }
-  
-  
-
   }
-
 
 }
 
@@ -132,7 +134,6 @@ function startQuiz()
       $('.quizStart').remove();
        createQuestionImage();
        hideTrivia();
-        
         
     });
 
@@ -175,14 +176,33 @@ function renderNextQuestion(){
     {
       event.preventDefault();
     incrementQuestionNumber();
-    createQuestionImage();
+   // createQuestionImage();
     
     console.log("inside render is "+questionNumber);
     
     $('.questionAnswerForm').html(createQuestion());
+    createQuestionImage();
     hideSubmitButton();
     hideTrivia();
     });
+
+}
+
+function showResults(){
+  $('.questionAnswerForm').html(
+   ` <div class="quizResult">
+    You scored ${score} out of 5
+  <button class = "restartQuiz" type="submit">Restart Quiz</button>
+  </div>`
+  );
+
+}
+
+function restartQuiz(){
+  $('.questionAnswerForm').on('click', '.restartQuiz',function(event)
+  {
+    location.reload();
+  });
 
 }
 
