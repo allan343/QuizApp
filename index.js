@@ -131,6 +131,8 @@ function startQuiz()
     $('.quizStart').on('click', '.startButton',function(event)
     {
       $('.questionAnswerForm').css('display', 'block');
+     // $('.questionAnswerForm').css('margin-left','auto');
+     // $('.questionAnswerForm').css('margin-right','auto');
       $('.quizStart').remove();
        createQuestionImage();
        hideTrivia();
