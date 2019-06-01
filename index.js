@@ -191,7 +191,7 @@ function renderNextQuestion(){
 function showResults(){
   $('.questionAnswerForm').html(
    ` <div class="quizResult">
-    You scored ${score} out of 5
+    <h1 class ="results">You scored ${score} out of 5</h1>
   <button class = "restartQuiz" type="submit">Restart Quiz</button>
   </div>`
   );
