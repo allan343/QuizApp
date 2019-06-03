@@ -139,7 +139,7 @@ input{
   padding: 10px;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 1120px) {
   
 body {
   background-image:none;
