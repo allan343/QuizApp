@@ -167,6 +167,7 @@ margin-bottom: 20px;
   flex-direction: column;
   border: none;
   flex-shrink: 1;
+  
   max-width: 100%;
   min-width: 0;
   }
@@ -178,7 +179,7 @@ margin-bottom: 20px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  /*min-width: 0;*/
+  min-width: 0;
   }
   .Question{
     flex-shrink: 1;
@@ -186,14 +187,14 @@ margin-bottom: 20px;
     width: 100%;
     margin-left: auto;
     margin-right:auto;
-  }
+  }/*
   img{
   max-width: 100%;
   height: auto;
   min-width: 0;
   flex-shrink: 1;
   
-  }
+  }*/
 }
 
 
