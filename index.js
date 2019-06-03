@@ -42,44 +42,43 @@ function incrementScore () {
     if (questionNumber < STORE.length) {
     return `
     <section class = 'info'>
-                             <ul>
-                                     <li class= "count">Question<span class="questionNumber"> &nbsp;${questionNumber}&nbsp; </span>out of 5</li>
-                                     <li class= "score">Score  <span class= "scoreCount"> &nbsp;${score}&nbsp;</span> : 5 </li>
-                            </ul>
-                        </section>
+      <ul>
+          <li class= "count">Question<span class="questionNumber"> &nbsp;${questionNumber}&nbsp; </span>out of 5</li>
+          <li class= "score">Score  <span class= "scoreCount"> &nbsp;${score}&nbsp;</span> : 5 </li>
+      </ul>
+    </section>
                         
     <hr>
+
     <form class="questionForm"  method ="post">
-                    
-                            <fieldset>
-                                    <legend class="question">${STORE[questionNumber].question} </legend>
-                                    <div class ="inputBorder answer1">
-                                    <input type="radio" name="answers" id="ans-great-1" required value="${STORE[questionNumber].answers[0]}">
-                                    <label for="ans-great-1">${STORE[questionNumber].answers[0]}</label>
-                                    </div>
-                                    <br>
-                                    <div class ="inputBorder answer2">
-                                    <input type="radio" name="answers" id="ans-great-2" required value="${STORE[questionNumber].answers[1]}">
-                                    <label for="ans-great-2">${STORE[questionNumber].answers[1]}</label>
-                                    </div>
-                                    <br>
-                                    <div class ="inputBorder answer3">
-                                    <input type="radio" name="answers" id="ans-great-3" required value="${STORE[questionNumber].answers[2]}">
-                                    <label for="ans-great-3">${STORE[questionNumber].answers[2]}</label>
-                                    </div>
-                                    <br>
-                                    <div class ="inputBorder answer4">
-                                    <input type="radio" name="answers" id="ans-great-4" required value="${STORE[questionNumber].answers[3]}">
-                                    <label for="ans-great-4">${STORE[questionNumber].answers[3]}</label>
-                                    </div>
-                                  </fieldset>
-                                  <button class = "userSubmit" type="submit">Submit</button>
-                                    <div class="trivia">
-                                    ${STORE[questionNumber].trivia}
-                                    </div>
-                                  <button class = "nextQuestion" type="submit">Next Question</button>
-                                </form>
-                        </section>
+      <fieldset>
+        <legend class="question">${STORE[questionNumber].question} </legend>
+          <div class ="inputBorder answer1">
+              <input type="radio" name="answers" id="ans-great-1" required value="${STORE[questionNumber].answers[0]}">
+              <label for="ans-great-1">${STORE[questionNumber].answers[0]}</label>
+          </div>
+              <br>
+          <div class ="inputBorder answer2">
+              <input type="radio" name="answers" id="ans-great-2" required value="${STORE[questionNumber].answers[1]}">
+              <label for="ans-great-2">${STORE[questionNumber].answers[1]}</label>
+          </div>
+              <br>
+          <div class ="inputBorder answer3">
+              <input type="radio" name="answers" id="ans-great-3" required value="${STORE[questionNumber].answers[2]}">
+              <label for="ans-great-3">${STORE[questionNumber].answers[2]}</label>
+          </div>
+              <br>
+          <div class ="inputBorder answer4">
+              <input type="radio" name="answers" id="ans-great-4" required value="${STORE[questionNumber].answers[3]}">
+              <label for="ans-great-4">${STORE[questionNumber].answers[3]}</label>
+          </div>
+        </fieldset>
+          <button class = "userSubmit" type="submit">Submit</button>
+          <div class="trivia">
+            ${STORE[questionNumber].trivia}
+          </div>
+          <button class = "nextQuestion" type="submit">Next Question</button>
+        </form>
     `;
     }
     else{
