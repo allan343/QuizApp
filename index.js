@@ -34,7 +34,10 @@ function incrementScore () {
 
   function createQuestionImage() {
   
+    if (questionNumber < STORE.length) {
     $(".questionImage").attr("src", STORE[questionNumber].icon);
+    $(".questionImage").attr("alt", STORE[questionNumber].alt);
+    }
   }
 
   function createQuestion(){
@@ -177,6 +180,7 @@ function showResults(){
   );
 
   $(".questionImage").attr("src", "gameEnd.jpg");
+  $(".questionImage").attr("alt", "result screen");
 
 }
 
