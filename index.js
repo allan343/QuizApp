@@ -1,48 +1,48 @@
 let questionNumber = 1;
 let score = 0;
 
-function hideSubmitButton(){
+function hideSubmitButton() {
   $(".userSubmit").hide();
 }
 
-function showSubmitButton(){
+function showSubmitButton() {
   $(".userSubmit").show();
 }
 
-function incrementScore () {
-    score++;
-    $('.scoreCount').text(score);
-  }
+function incrementScore() {
+  score++;
+  $('.scoreCount').text(score);
+}
 
-  function hideTrivia(){
-    $( ".trivia" ).hide();
-    $( ".nextQuestion" ).hide();
-  }
+function hideTrivia() {
+  $(".trivia").hide();
+  $(".nextQuestion").hide();
+}
 
-  function showTrivia(){
-    $( ".trivia" ).show();
-    $( ".nextQuestion" ).show();
-  }
+function showTrivia() {
+  $(".trivia").show();
+  $(".nextQuestion").show();
+}
 
-  function setQuestionNumber(){
-    $('.questionNumber').text(questionNumber);
-  }
-  function incrementQuestionNumber () {
-    questionNumber++;
-   setQuestionNumber();
-  }
+function setQuestionNumber() {
+  $('.questionNumber').text(questionNumber);
+}
+function incrementQuestionNumber() {
+  questionNumber++;
+  setQuestionNumber();
+}
 
-  function createQuestionImage() {
-  
-    if (questionNumber < STORE.length) {
+function createQuestionImage() {
+
+  if (questionNumber < STORE.length) {
     $(".questionImage").attr("src", STORE[questionNumber].icon);
     $(".questionImage").attr("alt", STORE[questionNumber].alt);
-    }
   }
+}
 
-  function createQuestion(){
-    
-    if (questionNumber < STORE.length) {
+function createQuestion() {
+
+  if (questionNumber < STORE.length) {
     return `
     <section class = 'info'>
       <ul>
@@ -52,7 +52,6 @@ function incrementScore () {
     </section>
                         
     <hr>
-
     <form class="questionForm"  method ="post">
       <fieldset>
         <legend class="question">${STORE[questionNumber].question} </legend>
@@ -83,40 +82,40 @@ function incrementScore () {
           <button class = "nextQuestion" type="submit">Next Question</button>
         </form>
     `;
-    }
-    else{
-     showResults();
-      restartQuiz();
-    }
   }
+  else {
+    showResults();
+    restartQuiz();
+  }
+}
 
-function isAnswerCorrect(selection){
-  
-  if($(selection).find('input').val() ===STORE[questionNumber].correctAnswer){
+function isAnswerCorrect(selection) {
+
+  if ($(selection).find('input').val() === STORE[questionNumber].correctAnswer) {
     incrementScore();
     $(selection).css("background-color", "green");
     $(selection).css("color", "white");
   }
 
-  else{
+  else {
     $(selection).css("background-color", "red");
     $(selection).css("color", "white");
-      
-    if($(".answer1").find('input').val() ===STORE[questionNumber].correctAnswer){
+
+    if ($(".answer1").find('input').val() === STORE[questionNumber].correctAnswer) {
       $(".answer1").css("background-color", "green");
       $(".answer1").css("color", "white");
     }
-    if($(".answer2").find('input').val() ===STORE[questionNumber].correctAnswer){
+    if ($(".answer2").find('input').val() === STORE[questionNumber].correctAnswer) {
       $(".answer2").css("background-color", "green");
       $(".answer2").css("color", "white");
     }
 
-    if($(".answer3").find('input').val() ===STORE[questionNumber].correctAnswer){
+    if ($(".answer3").find('input').val() === STORE[questionNumber].correctAnswer) {
       $(".answer3").css("background-color", "green");
       $(".answer3").css("color", "white");
     }
 
-    if($(".answer4").find('input').val() ===STORE[questionNumber].correctAnswer){
+    if ($(".answer4").find('input').val() === STORE[questionNumber].correctAnswer) {
       $(".answer4").css("background-color", "green");
       $(".answer4").css("color", "white");
     }
@@ -124,33 +123,32 @@ function isAnswerCorrect(selection){
 
 }
 
-function startQuiz(){
-    $('.quizStart').on('click', '.startButton',function(event)
-    {
-      $('.questionAnswerForm').css('display', 'block');
-      $('.quizStart').remove();
-       createQuestionImage();
-       hideTrivia();
-    });
+function startQuiz() {
+  $('.quizStart').on('click', '.startButton', function (event) {
+    $('.questionAnswerForm').css('display', 'block');
+    $('.quizStart').remove();
+    createQuestionImage();
+    hideTrivia();
+  });
 }
 
-function renderQuestion(){
+function renderQuestion() {
 
-    $('.questionAnswerForm').html(createQuestion());
-    hideSubmitButton();
+  $('.questionAnswerForm').html(createQuestion());
+  hideSubmitButton();
 }
 
-function userSelectAnswer(){
+function userSelectAnswer() {
 
   let selection = " ";
 
-  $('.questionAnswerForm').on('click', '.inputBorder',function(event){
-    $(this).find('input').prop('checked',true);
-      selection= `.${$(this).attr('class').split(" ")[1]}`;
-      showSubmitButton();
+  $('.questionAnswerForm').on('click', '.inputBorder', function (event) {
+    $(this).find('input').prop('checked', true);
+    selection = `.${$(this).attr('class').split(" ")[1]}`;
+    showSubmitButton();
   });
 
-  $('.questionAnswerForm').on('submit',function(event){
+  $('.questionAnswerForm').on('submit', function (event) {
     event.preventDefault();
     isAnswerCorrect(selection);
     $('.userSubmit').remove();
@@ -158,22 +156,21 @@ function userSelectAnswer(){
   });
 }
 
-function renderNextQuestion(){
-    $('.questionAnswerForm').on('click', '.nextQuestion',function(event)
-    {
-      event.preventDefault();
+function renderNextQuestion() {
+  $('.questionAnswerForm').on('click', '.nextQuestion', function (event) {
+    event.preventDefault();
     incrementQuestionNumber();
     $('.questionAnswerForm').html(createQuestion());
     createQuestionImage();
     hideSubmitButton();
     hideTrivia();
-    });
+  });
 
 }
 
-function showResults(){
+function showResults() {
   $('.questionAnswerForm').html(
-   ` <div class="quizResult">
+    ` <div class="quizResult">
     <h1 class ="results">You scored ${score} out of 5</h1>
   <button class = "restartQuiz" type="submit">Restart Quiz</button>
   </div>`
@@ -184,19 +181,18 @@ function showResults(){
 
 }
 
-function restartQuiz(){
-  $('.questionAnswerForm').on('click', '.restartQuiz',function(event)
-  {
+function restartQuiz() {
+  $('.questionAnswerForm').on('click', '.restartQuiz', function (event) {
     location.reload();
   });
 
 }
 
-function createQuiz () {
-    startQuiz();
-    renderQuestion();
-    userSelectAnswer();
-    renderNextQuestion();
-  }
-  
-  $(createQuiz);
+function createQuiz() {
+  startQuiz();
+  renderQuestion();
+  userSelectAnswer();
+  renderNextQuestion();
+}
+
+$(createQuiz);
